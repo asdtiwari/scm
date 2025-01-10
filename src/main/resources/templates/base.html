@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="baseFragment (title, content)" class="dark">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="baseFragment (title, content)">
 
 <head>
   <meta charset="utf-8" />
@@ -25,9 +25,9 @@
     <![endif]-->
   <div th:replace="~{navbar :: navbarFragment}"></div>
   <div th:replace="${content}"></div>
-  <script th:src="@{script/script.js}" async defer></script>
-  <script th:src="@{script/jquery.js}" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script th:src="@{script/jquery.js}"></script>
+  <script th:src="@{script/script.js}"></script>
 </body>
 
 </html>
