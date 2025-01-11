@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         // Add click event listener to toggle the theme
         $button.on("click", function () {
-            const oldTheme = currentTheme;
+            let oldTheme = currentTheme;
 
             // Toggle theme
             currentTheme = currentTheme === "dark" ? "light" : "dark";
