@@ -1,7 +1,12 @@
 package com.scm.scm.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.scm.scm.entities.RegisterForm;
+
 
 @Controller
 public class PageController {
@@ -40,4 +45,11 @@ public class PageController {
     public String about() {
         return "/about";
     }
+
+    @RequestMapping(value="/do-register", method=RequestMethod.POST)
+    public String requestMethodName(@ModelAttribute RegisterForm userForm) {
+        System.out.println(userForm);
+        return "redirect:/signup";
+    }
+    
 }
