@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scm.scm.entities.RegisterForm;
+import com.scm.scm.entities.User;
+import com.scm.scm.services.implementation.UserServiceImplementation;
 
 
 @Controller
@@ -49,6 +51,17 @@ public class PageController {
     @RequestMapping(value="/do-register", method=RequestMethod.POST)
     public String requestMethodName(@ModelAttribute RegisterForm userForm) {
         System.out.println(userForm);
+        UserServiceImplementation service = new UserServiceImplementation();
+        
+        User user = new User();
+        user.setUsername(userForm.getEmail());
+        user.setName(userForm.getName());
+        user.setEmail(userForm.getEmail());
+        user.setPassword(userForm.getPassword());
+        user.setNumber(userForm.getNumber());
+        user.setAbout(userForm.getAbout());
+
+        service.saveUser(user);
         return "redirect:/signup";
     }
     
